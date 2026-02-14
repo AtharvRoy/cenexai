@@ -214,3 +214,37 @@ Then open API docs at `http://127.0.0.1:8000/docs`.
 python -m compileall app tests
 python -m unittest discover -s tests -p 'test_*.py'
 ```
+
+
+### One-command setup (recommended)
+
+Linux/macOS:
+
+```bash
+./scripts/bootstrap.sh
+```
+
+Windows PowerShell:
+
+```powershell
+./scripts/bootstrap.ps1
+```
+
+### Makefile shortcuts
+
+```bash
+make install   # create venv + install deps
+make test      # run unit tests
+make run       # start API
+```
+
+### Troubleshooting
+
+If installation fails with proxy/network errors, your environment may block pip index access.
+In that case run the same commands on your local machine or configure pip proxy/index settings,
+then re-run:
+
+```bash
+python -m pip install -r requirements.txt
+python -m unittest discover -s tests -p 'test_*.py'
+```
