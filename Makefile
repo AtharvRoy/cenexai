@@ -1,7 +1,7 @@
 PYTHON ?= python
 VENV ?= .venv
 
-.PHONY: venv install test run check
+.PHONY: venv install test run check doctor
 
 venv:
 	$(PYTHON) -m venv $(VENV)
@@ -18,3 +18,7 @@ run:
 
 check:
 	$(PYTHON) -m compileall app tests
+
+
+doctor:
+	$(PYTHON) scripts/doctor.py

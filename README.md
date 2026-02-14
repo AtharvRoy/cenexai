@@ -233,10 +233,22 @@ Windows PowerShell:
 ### Makefile shortcuts
 
 ```bash
+make doctor    # preflight environment checks
 make install   # create venv + install deps
 make test      # run unit tests
 make run       # start API
 ```
+
+### Environment diagnostics
+
+Run a quick preflight to identify missing deps/network issues before setup:
+
+```bash
+make doctor
+# or
+python scripts/doctor.py
+```
+
 
 ### Troubleshooting
 
